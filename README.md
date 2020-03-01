@@ -1,2 +1,2 @@
-# jummy1124.github.io
+# Personal profile
 link : https://jummy1124.github.io/
