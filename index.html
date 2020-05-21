@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ying Chen</title>
+  </head>
+  
+  <script type="text/javascript">
+    var curIndex = 0;
+    var timeInterval = 5000;
+    var arr = new Array();
+    arr[0] = "./IMG_001.jpg";
+    arr[1] = "./IMG_003.jpg";
+    arr[2] = "./IMG_004.jpg";
+    arr[3] = "./IMG_005.jpg";
+    setInterval(changeImg, timeInterval);
+    function changeImg() {     
+    var obj = document.getElementById("d1");
+    if (curIndex == arr.length - 1) {
+    curIndex = 0;
+    } else {
+    curIndex += 1;
+    }
+                          
+    obj.style.backgroundImage= "URL("+arr[curIndex]+")";     
+    }
+
+    function ShowTime(){
+    　var NowDate=new Date();
+      var Y=NowDate.getFullYear();
+    　var M=NowDate.getMonth()+1;
+    　var D=NowDate.getDate();
+    　var h=NowDate.getHours();
+    　var m=NowDate.getMinutes();
+    　var s=NowDate.getSeconds();　
+    　document.getElementById('showbox').innerHTML = " 今天日期 : "+Y+' 年 '+M+' 月 '+D+' 日 '+'<br>'+'現在時間 : '+h+' 時 '+m+' 分 '+s+' 秒 ';
+    　setTimeout('ShowTime()',1000);
+    }
+
+    </script>
+
+
+  <style>
+        .bg-top{
+            /* background-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+            width: 70%;
+            height: 50%;
+            margin: auto;
+            position: relative;
+            /* padding-bottom: 100px; */
+            /* top: 0; */
+            left: 13.5%;
+            /* right: 0; */
+            /* bottom: 0; */
+          }
+          
+          .bg-left{
+            background-color: aquamarine;
+            box-shadow:5px 5px 9px #8B8B7A;
+            width: 25%;
+            height: 1000px;
+            position: absolute;
+            /* font-family:DFKai-sb; */
+            top: 1%;
+            left: 1.5%;
+            right: 0;
+            bottom: 0;
+          }
+
+          .bg-body{
+            background-color: #32c0f0e7;
+            box-shadow:5px 5px 9px #8B8B7A;
+            width: 70%;
+            height: 650px;
+            position: relative;
+            overflow: auto;
+            /* font-family:DFKai-sb; */
+            /* top: 35%; */
+            left: 28.5%;
+            right: 0;
+            bottom: 0;
+          }
+
+          .bg-footer{
+            background-color: darkslateblue;
+            width: 98%;
+            height: 90px;
+            position: relative ;
+            text-align: center;
+            font-size: 24px;
+            line-height : 30px;
+            margin-top: 50px;
+            color: white;
+            font-family:DFKai-sb;
+            top: 0;
+            left: 1%;
+            right: 0;
+            bottom: 0;
+          }
+
+          .bg-image {
+            background-image: url("./IMG_001.jpg");
+            box-shadow:5px 5px 9px #8B8B7A;
+            height: 350px;
+            /* border-radius: 2%; */
+            /* background-position: top; */
+            background-position : 0% 30%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* position: 20% 20%; */
+          }
+
+          .person-img {
+                content:url("./IMG_002.jpg");
+                border: 10px solid #ffffff;
+                /* border-radius: 8px; */
+                border-radius: 50%;
+                /* padding: 10px; */
+                /* display: block; */
+                margin-left: 25%;
+                margin-top: 5%;
+                width: 150px;
+              }
+
+          .bg-text {
+            text-align: center;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+          }
+
+          .indent{ 
+            /* font-size: 24px; */
+            padding-left: 2.0em;
+            }
+
+          .p{
+            /* border: 1px solid; */
+            /* border-radius: 1%; */
+            /* padding: 5px; */
+            margin-left: 18%;
+            font-size: 36px;
+            color:blueviolet;
+          }
+
+          .font1{
+            margin-left: 5%;
+            margin-top: 5%;
+            font-size: 22px;
+            color: chocolate;
+          }
+
+  </style>
+
+  <body bgcolor="#FFFFE0">
+  <!-- <body bgcolor="#CAFF70"> -->
+    <div class="bg-top" >
+      <div class="bg-image" id=d1>
+        <div class="bg-text">
+          <h1 style="font-size:50px">I am Ying Chen</h1>
+        </div>
+      </div>
+    </div>
+    <div class="bg-body">
+      <br><h1>Experience</h1>
+      <hr>
+      <h2 style="font-size:20px">2019.12 : AIDEA Passenger Hotspot Forecast Competition TOP.2 
+      <a href="https://github.com/jummy1124/Taxi_Hotspot_prediction" target="_blank">code</a> 
+      <a href="https://aidea-web.tw/topic/76f9ec46-cb90-4aa8-82f2-ebfed54cecfb" target="_blank">link</a>
+      <a href="./Passenger_Hotspot.pdf" target="_blank">proof</a></h2>
+      <h2 style="font-size:20px">2019.12 : AIDEA 專題競賽-載客熱點第二名</h2><br>
+
+      <h2 style="font-size:20px">2019.12 : 2020 AI FUN CUP TOP.2 <a href="https://github.com/jummy1124/2020_AI_FUN_CUP" target="_blank">code</a> 
+      <a href="https://fgc.stpi.narl.org.tw/news/newsDetail?id=4b1141306ec5a5d8016ee9afe569000a">link</a>
+      <a href="./FUNCUP.pdf" target="_blank">proof</a></h2>
+      <h2 style="font-size:20px">2019.12 : 2020「科技大擂台與AI對話」(Fun Cup) 第二名</h2><br>
+
+      <h2 style="font-size:20px">2019.11 : Yushan Bank Artificial Intelligence Open Challenge-Autumn 2019 (Credit card fraud detection). Rank : 232/785.
+      <a href="https://github.com/jummy1124/Credit_card" target="_blank">code</a> 
+      <a href="https://tbrain.trendmicro.com.tw/Competitions/Details/10" target="_blank">link</a>
+      <a href="./Credit_card.pdf" target="_blank">proof</a></h2>
+      <h2 style="font-size:20px">2019.11 : 玉山人工智慧公開挑戰賽2019秋季賽 排名 : 232/785</h2><br>
+
+      <h2 style="font-size:20px">2019.10 : 2019 Bicycle Industry Digital Transformation AI Application Competition First Prize.
+      <a href="./IMG_006.JPG" target="_blank">img</a></h2>
+      <h2 style="font-size:20px">2019.10 : 2019自行車產業數位轉型AI應用競賽首獎</h2><br>
+
+      <h2 style="font-size:20px">2019.10 : 2019 Cathay Pacific Big Data Competition. Rank : 25/176.
+      <a href="https://github.com/jummy1124/Tbrain_2019_Cathay_Pacific_Big_Data_Competition" target="_blank">code</a>
+      <a href="https://tbrain.trendmicro.com.tw/Competitions/Details/7" target="_blank">link</a></h2>
+      <h2 style="font-size:20px">2019.10 : 2019 國泰大數據競賽 排名 : 25/176</h2><br>
+
+      <h2 style="font-size:20px">2019.09 : AI CUP 2019 Biomedical Paper Automatic Analysis Official Competition top 25%.
+      <a href="https://moeaincu.wixsite.com/aicup/post/%E3%80%90%E7%94%9F%E9%86%AB%E8%AB%96%E6%96%87%E8%87%AA%E5%8B%95%E5%88%86%E6%9E%90%E6%AD%A3%E5%BC%8F%E8%B3%BD%E3%80%91%E5%BE%97%E7%8D%8E%E5%90%8D%E5%96%AE" target="_blank">link</a></h2>
+      <h2 style="font-size:20px">2019.09 : AI CUP 2019 生醫論文自動分析正式賽 前標</h2><br>
+
+      <h2 style="font-size:20px">2019.09 : Enter the finals of 2019 IMBD.<a href="https://github.com/jummy1124/2019IMBD_TW" target="_blank">code</a>
+      <a href="https://imbd2019.thu.edu.tw/" target="_blank">link</a></h2>
+      <h2 style="font-size:20px">2019.09 : 2019 IMBD 進入決賽</h2><br>
+
+      <h2 style="font-size:20px">2019.07 : Teacher assistant of Asia University summer program.<a href="./IMG_005.jpg" target="_blank">img</a></h2>
+      <h2 style="font-size:20px">2019.07 : 亞洲大學暑期計畫助教</h2><br>
+
+      <h2 style="font-size:20px">2019.06 : AIDEA AOI(Automated Optical Inspection)thematic competition TOP.1 
+      <a href="https://github.com/jummy1124/AIDEA_AOI" target="_blank">code</a>
+      <a href="https://aidea-web.tw/topic/77687b74-211d-4e71-832a-416f9e99f611" target="_blank">link</a>
+      <a href="./AOI.pdf" target="_blank">proof</a></h2>
+      <h2 style="font-size:20px">2019.06 : AIDEA AOI 專題競賽第一名</h2><br>
+
+      <h2 style="font-size:20px">2019.03 : Honors Student of Taichung City in 2019.
+      <a href="./Honors.pdf" target="_blank">proof</a></h2>
+      <h2 style="font-size:20px">2019.03 : 2019台中市模範生</h2><br>
+      
+      <h2 style="font-size:20px">2019.01 : A simple game programming.<a href="https://github.com/jummy1124/Remember_Card_Game" target="_blank">code</a></h2>
+      <h2 style="font-size:20px">2019.01 : 一個簡單的小遊戲(記憶翻牌)</h2><br>
+
+      <h2 style="font-size:20px">2018.05 : Pass the license exam of HTML5 Application Development Fundamentals.
+      <a href="./HTML5.pdf" target="_blank">proof</a></h2>
+      <h2 style="font-size:20px">2018.05 : 通過HTML5基礎開發應用證照</h2>
+    </div>
+  </body>
+
+  <body>
+    <div class="bg-left">
+      <div class="p">Personal profile<br>&emsp;個人簡介</div>
+      <div class="person-img"></div>
+      <hr size="6px" color="#666666" width="90%">
+      <div class="font1">
+        Name : Ying-Chen Lin<br>
+        姓名 : 林映辰<br><br>
+        Location : Taichung, Taiwan<br>
+        居住處 : 台中，台灣<br><br>
+        Background : <br>
+        背景 : <br>
+        <hr align="left" width="90%">
+        <a href="https://www.asia.edu.tw/" target="_blank">Asia University Student</a> <br>亞洲大學學生<br>
+        (2017.9 - 2021.6)<br><br>
+        Department  : Information Engineering<br>科系 : 資訊工程<br><br>
+        Major : Python、Java<br> 主修 : Python、Java<br><br>
+        Research field : M/D learning<br>研究領域 : 機器學習、深度學習<br><br>
+        <hr align="left" width="90%">
+        Github : <a href="https://github.com/jummy1124" target="_blank">jummy1124</a><br><br>
+        Kaggle account : <a href="https://www.kaggle.com/jummy1124" target="_blank">Ying Chen</a><br><br>
+        
+      </div>
+    </div>
+  </body> 
+  
+  <body onload="ShowTime()">
+    <div class="bg-footer">
+      <div id="showbox"></div>
+        編 輯 : 林 映 辰
+    </div>
+  </body>
+</html>
