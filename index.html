@@ -39,101 +39,6 @@
             #comment p .datetime{width:200px; color:#999; text-align:right;}
         </style>
 
-        <!-- mseeage board -->
-        <script type="text/javascript">
-        var named;
-             function delete1(id)
-             {
-                 localStorage.removeItem(id);
-                 this.Storage.writeData();
-             }
-             function prom() {
-                 var name = prompt("請輸入您的名字", "");
-                 named = name;
-
-                 if (named)
-                 {
-                     alert("歡迎您：" + name)
-                     document.getElementById("shangtian").style.display = "none";
-                     document.getElementById("ritian").value = named;
-
-                 }
-                 else {
-                     document.getElementById("ritian").value = "匿名發言者";
-                 }
-             }
-          var Storage =
-          {
-              saveData:function()
-              {
-                      var data = document.querySelector("#post textarea");
-                  if(data.value != "")
-                  {
-                      var time = new Date().getTime() + Math.random() * 5;
-                      if (named) {
-                          localStorage.setItem(time, data.value + "|" + named + "|" + this.getDateTime());
-                      }
-                      else
-                      {
-                          localStorage.setItem(time, data.value + "|" + "匿名發言者" + "|" + this.getDateTime());
-                      }
-
-                      data.value = "";
-                      this.writeData();
-                  }
-                  else
-                  {
-                      alert("請填寫您的留言！");
-                 }
-              },
-              writeData:function()
-              {
-                 var dataHtml = "", data = "";
-                  for(var i = localStorage.length-1; i >= 0; i--)
-                  {
-                      data = localStorage.getItem(localStorage.key(i)).split("|");
-                      dataHtml += "<span style=>" + data[1] + "<span style=\"float:right\">" + data[2] + "</span><p><span class=\"msg\">" + data[0] + "<input style=\"float:right;border:none;border-radius:5px;\" id=\"clearBt\" type=\"button\" />" + "</span></p>";
-                  }
-                  document.getElementById("comment").innerHTML = dataHtml;
-              },
-              clearData:function()
-              {
-                  if(localStorage.length > 0)
-                  {
-                      if(window.confirm("清空后不可恢復，是否確認清空？"))
-                      {
-                          localStorage.clear();
-                          this.writeData();
-                      }
-                  }
-                  else
-                 {
-                     alert("沒有需要清空的數據！");
-                  }
-              },
-              getDateTime:function()
-              {
-                  var isZero = function(num)
-                  {
-                      if(num < 10)
-                     {
-                          num = "0" + num;
-                      }
-                      return num;
-                  }
-                  
-                  var d = new Date();
-                  return d.getFullYear() + "-" + isZero(d.getMonth() + 1) + "-" + isZero(d.getDate()) + " " + isZero(d.getHours()) + ":" + isZero(d.getMinutes()) + ":" + isZero(d.getSeconds());
-              }            
-          }
-          window.onload = function()
-          {
-              Storage.writeData();
-              document.getElementById("postBt").onclick = function(){Storage.saveData();}
-              document.getElementById("clearBt").onclick = function(){Storage.clearData();}
-          }
-        </script>
-
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -147,9 +52,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li> -->
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#text">Message Board</a></li>
                 </ul>
             </div>
         </nav>
@@ -159,12 +62,10 @@
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
                     <h1 class="mb-0">Ying Chen <span class="text-primary">Lin</span></h1>
-                    <!-- <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 · <a href="mailto:name@email.com">name@email.com</a></div> -->
-                    <p class="lead mb-5">I studied in the Computer Science and Information Engineering of Asia University, from 2017 to 2021.Majoring in machine and deep learning.</p>
+                    <p class="lead mb-5">I studied in the Computer Science and Information Engineering of Asia University, from 2017 to 2021.Majoring in data mining,machine and deep learning.</p>
                     <div class="social-icons">
                         <a class="social-icon" href="https://github.com/jummy1124" target="_blank"><i class="fab fa-github"></i></a>
                         <a class="social-icon" href="https://www.kaggle.com/jummy1124" target="_blank"><i class="fab fa-kaggle"></i></a>
-                        <!-- <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a> -->
                     </div>
                 </div>
             </section>
@@ -174,14 +75,15 @@
                 <div class="resume-section-content">
                     <h2 class="mb-5">Experience</h2>
 
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">Senior Web Developer</h3>-->
-<!--                            <div class="subheading mb-3">Intelitec Solutions</div>-->
-<!--                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>-->
-<!--                    </div>-->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <div class="subheading mb-2">Pass the license exam of Introduction to Programming using Python.<br>
+                                <h2 style="font-size:20px">通過HTML5基礎開發應用證照</h2>
+                            </div>
+                            <a href="./python.pdf" target="_blank">proof</a></h2>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">2020.11</span></div>
+                    </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
@@ -200,7 +102,7 @@
                                 <h2 style="font-size:20px">亞洲大學教學助教</h2>
                             </div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2020.03-2020.06</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">2020.03-2020.06<br>2020.09-2021.01</span></div>
                     </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -252,14 +154,7 @@
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">2018.05</span></div>
                     </div>
-<!--                    <div class="d-flex flex-column flex-md-row justify-content-between">-->
-<!--                        <div class="flex-grow-1">-->
-<!--                            <h3 class="mb-0">Web Design Intern</h3>-->
-<!--                            <div class="subheading mb-3">Shout! Media Productions</div>-->
-<!--                            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>-->
-<!--                        </div>-->
-<!--                        <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>-->
-<!--                    </div>-->
+
                 </div>
             </section>
             <hr class="m-0" />
@@ -289,27 +184,21 @@
                         <li class="list-inline-item"><i class="fab fa-php"></i>PHP</li>
                         <li class="list-inline-item"><i class="fab fa-python"></i>PYTHON</li>
                         <li class="list-inline-item"><i class="fab fa-java"></i>JAVA</li>
+                        <li class="list-inline-item"><i class="fab fa-cuttlefish"></i>C++</li>
                     </ul>
                     <div class="subheading mb-3">Major & Research field</div>
                     <ul class="fa-ul mb-0">
                         <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>Python、Java、PHP
+                            <span class="fa-li"><i class="fas fa-check"></i></span>Python、Java、PHP、C++
                         </li>
                         <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>M/D learning
+                            <span class="fa-li"><i class="fas fa-check"></i></span>Data Mining、M/D learning、Web 
                         </li>
                     </ul>
                 </div>
             </section>
             <hr class="m-0" />
-            <!-- Interests-->
-            <!-- <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-                </div>
-            </section> -->
+
             <hr class="m-0" />
             <!-- Awards-->
             <section class="resume-section" id="awards">
@@ -318,8 +207,15 @@
                     <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            <h2 style="font-size:20px">2021.02 : AI CUP 2020 Aiwen Mango Classification Competition PRIZE CONTEST-HONORABLE MENTION.
+                                <a href="https://aidea-web.tw/topic/72f6ea6a-9300-445a-bedc-9e9f27d91b1c" target="_blank">&ensp; link</a>
+                                <a href="./AICUPmango.pdf" target="_blank">&ensp; proof</a></h2>
+                            <h2 style="font-size:20px">2021.02 : AI CUP 2020 愛文芒果等級分類競賽 佳作</h2>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             <h2 style="font-size:20px">2020.06 : AIDEA-Taiwan COVID-19 confirmed case forecast TOP.3
-                                <a href="https://aidea-web.tw/covid-19" target="_blank">&ensp; link</a></h2></h2>
+                                <a href="https://aidea-web.tw/covid-19" target="_blank">&ensp; link</a></h2>
                             <h2 style="font-size:20px">2020.06 : AIDEA-台灣COVID-19確診人數案例預測 第二名</h2>
                         </li>
                         <li>
@@ -406,31 +302,7 @@
                                 <a href="./AOI.pdf" target="_blank">&ensp; proof</a></h2>
                             <h2 style="font-size:20px">2019.06 : AIDEA AOI 專題競賽第一名</h2>
                         </li>
-                        <!-- <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>3<sup>rd </sup>Place - James Buchanan High School - Hackathon 2005
-                        </li> -->
                     </ul>
-                </div>
-            </section>
-
-             <!-- mseeage board -->
-            <section class="resume-section" id="text">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Message Board</h2>
-                    <div id="content">
-                        <div id="post">
-                            <div style="background:#3EADC5 ;height:30px;">
-                                Nickname：<input type="submit" id="shangtian" name="Submit3" style="border:none; background-color:#3EADC5; color:white;" value="Default user click to change" onclick="prom()" />
-                                <input type="text" id="ritian" style="border:none; background-color:#3EADC5; color:white;"   onclick="prom()"/>
-                                <!--disabled="disabled"-->
-                            </div>
-                            <div>
-                            <textarea class="transition"></textarea>
-                                </div>
-                            <input id="postBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:150px; height:30px;" value="Leave a message"/>
-                            </div>
-                       <div id="comment"></div>
-                    </div>
                 </div>
             </section>
 
